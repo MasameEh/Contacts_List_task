@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".contacts_list.ContactsListFragment">
 
-    <SearchView
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/sv_search"
         android:layout_width="0dp"
         android:layout_height="40dp"

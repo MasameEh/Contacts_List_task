@@ -19,9 +19,9 @@ class ContactsRecyclerViewAdapter (
     private val onContactClickListener: (Contact) -> Unit
 ) : RecyclerView.Adapter<ContactsRecyclerViewAdapter.ViewHolder>(){
 
+    private var filteredList: MutableList<Contact> = contactsList.toMutableList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.i("TAG", "onCreateViewHolder: Creating ViewHolder")
         val view = LayoutInflater.from(context).inflate(
             R.layout.contact_item, parent, false
         )
@@ -29,11 +29,11 @@ class ContactsRecyclerViewAdapter (
     }
 
     override fun getItemCount(): Int {
-       return contactsList.size
+       return filteredList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val contact = contactsList[position]
+        val contact = filteredList[position]
         holder.contactName.text = contact.name
         holder.contactPhone.text = contact.phoneNumber
         holder.deleteBtn.setOnClickListener {
@@ -49,9 +49,20 @@ class ContactsRecyclerViewAdapter (
         if (contacts != null) {
             contactsList.addAll(contacts)
         }
-        notifyDataSetChanged()
+        filter("")
     }
 
+    fun filter(query: String) {
+        filteredList = if (query.isEmpty()) {
+            contactsList.toMutableList()
+        } else {
+            contactsList.filter {
+                it.name.contains(query, ignoreCase = true) ||
+                        it.phoneNumber.contains(query, ignoreCase = true)
+            }.toMutableList()
+        }
+        notifyDataSetChanged()
+    }
     // ViewHolder class to hold the view for each contact item
     class ViewHolder(itemView: android.view.View) : RecyclerView.ViewHolder(itemView) {
 

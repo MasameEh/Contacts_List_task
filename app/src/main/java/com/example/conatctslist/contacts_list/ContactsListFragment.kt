@@ -11,12 +11,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.conatctslist.R
-import com.example.conatctslist.add_contact.AddContactViewModel
-import com.example.conatctslist.add_contact.AddContactViewModelFactory
 import com.example.conatctslist.data.local.ContactLocalDataSource
 import com.example.conatctslist.data.local.db.ContactsDatabase
 import com.example.conatctslist.data.repo.ContactRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import androidx.appcompat.widget.SearchView
 
 
 class ContactsListFragment : Fragment() {
@@ -25,6 +24,7 @@ class ContactsListFragment : Fragment() {
     private lateinit var viewModel: ContactsListViewModel
     private lateinit var contactAdapter: ContactsRecyclerViewAdapter
     private lateinit var contactsRv: RecyclerView
+    private lateinit var searchView: SearchView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,9 +63,21 @@ class ContactsListFragment : Fragment() {
             } else {
                 contactsRv.visibility = View.VISIBLE
             }
-            Log.i("TAG", "onViewCreated: $contacts")
             contactAdapter.submitList(contacts)
         }
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                contactAdapter.filter(query.orEmpty())
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Log.i("TAG", "onQueryTextChange: $newText")
+                contactAdapter.filter(newText.orEmpty())
+                return true
+            }
+        })
     }
 
 
@@ -83,7 +95,7 @@ class ContactsListFragment : Fragment() {
                 findNavController().navigate(action)
             }
         )
-
+        searchView = view?.findViewById(R.id.sv_search) ?: return
         contactsRv = view?.findViewById(R.id.rv_contacts) ?: return
         contactsRv.layoutManager = LinearLayoutManager(requireContext())
         contactsRv.adapter = contactAdapter
