@@ -14,8 +14,8 @@ interface ContactDao {
     fun getAllContacts(): LiveData<List<Contact>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertContact(contact: Contact)
+    suspend fun insertContact(contact: Contact): Long
 
     @Delete
-    fun deleteContact(contact: Contact)
+    suspend fun deleteContact(contact: Contact): Int
 }
