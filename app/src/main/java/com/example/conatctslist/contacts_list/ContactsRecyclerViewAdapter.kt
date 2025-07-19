@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.conatctslist.R
 import com.example.conatctslist.data.model.Contact
@@ -14,7 +15,8 @@ import com.example.conatctslist.data.model.Contact
 class ContactsRecyclerViewAdapter (
     private val context: Context,
     private val contactsList: MutableList<Contact>,
-    private val onDeleteClickListener: (Contact) -> Unit
+    private val onDeleteClickListener: (Contact) -> Unit,
+    private val onContactClickListener: (Contact) -> Unit
 ) : RecyclerView.Adapter<ContactsRecyclerViewAdapter.ViewHolder>(){
 
 
@@ -37,6 +39,9 @@ class ContactsRecyclerViewAdapter (
         holder.deleteBtn.setOnClickListener {
             onDeleteClickListener(contact)
         }
+        holder.contactCard.setOnClickListener{
+            onContactClickListener(contact)
+        }
     }
 
     fun submitList(contacts: List<Contact>?) {
@@ -53,7 +58,7 @@ class ContactsRecyclerViewAdapter (
         val contactName: TextView = itemView.findViewById(R.id.tv_contact_name)
         val contactPhone: TextView = itemView.findViewById(R.id.tv_contact_phone)
         val deleteBtn: ImageButton = itemView.findViewById(R.id.btn_delete_contact)
-
+        val contactCard: CardView = itemView.findViewById(R.id.contact_card)
     }
 
 }

@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 import com.example.conatctslist.R
 
 class ContactDetailsFragment : Fragment() {
 
+    private val args: ContactDetailsFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,4 +27,16 @@ class ContactDetailsFragment : Fragment() {
     }
 
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val contact = args.contact
+
+        val nameTv: TextView = view.findViewById(R.id.tv_contact_details_name)
+        val phoneTv: TextView = view.findViewById(R.id.tv_contact_details_phone)
+
+        nameTv.text = contact.name
+        phoneTv.text = contact.phoneNumber
+    }
 }

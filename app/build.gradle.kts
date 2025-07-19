@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("androidx.navigation.safeargs")
     id("com.google.devtools.ksp")
+    id("kotlin-parcelize")
+    kotlin("plugin.serialization") version "2.1.10"
 }
 
 android {

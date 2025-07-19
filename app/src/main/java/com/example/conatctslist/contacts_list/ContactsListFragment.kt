@@ -76,6 +76,11 @@ class ContactsListFragment : Fragment() {
             contactsList = mutableListOf(),
             onDeleteClickListener = { contact ->
                 viewModel.deleteContact(contact)
+            },
+            onContactClickListener = { contact ->
+                val action = ContactsListFragmentDirections
+                    .actionContactsListFragmentToContactDetailsFragment(contact)
+                findNavController().navigate(action)
             }
         )
 
