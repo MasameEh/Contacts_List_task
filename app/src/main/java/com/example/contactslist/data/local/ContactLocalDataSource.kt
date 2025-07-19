@@ -1,8 +1,8 @@
-package com.example.conatctslist.data.local
+package com.example.contactslist.data.local
 
 import androidx.lifecycle.LiveData
-import com.example.conatctslist.data.local.db.ContactDao
-import com.example.conatctslist.data.model.Contact
+import com.example.contactslist.data.local.db.ContactDao
+import com.example.contactslist.data.model.Contact
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

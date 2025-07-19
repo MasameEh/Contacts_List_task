@@ -1,4 +1,4 @@
-package com.example.conatctslist
+package com.example.contactslist
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

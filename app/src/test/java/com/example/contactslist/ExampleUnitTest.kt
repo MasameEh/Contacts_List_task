@@ -1,4 +1,4 @@
-package com.example.conatctslist
+package com.example.contactslist
 
 import org.junit.Test
 

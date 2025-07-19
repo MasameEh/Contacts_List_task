@@ -1,4 +1,4 @@
-package com.example.conatctslist.data.model
+package com.example.contactslist.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity

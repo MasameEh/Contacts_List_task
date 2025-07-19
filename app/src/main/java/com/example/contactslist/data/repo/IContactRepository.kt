@@ -1,7 +1,7 @@
-package com.example.conatctslist.data.repo
+package com.example.contactslist.data.repo
 
 import androidx.lifecycle.LiveData
-import com.example.conatctslist.data.model.Contact
+import com.example.contactslist.data.model.Contact
 
 interface IContactRepository {
 

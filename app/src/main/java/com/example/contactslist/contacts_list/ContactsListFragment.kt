@@ -1,4 +1,4 @@
-package com.example.conatctslist.contacts_list
+package com.example.contactslist.contacts_list
 
 import android.os.Bundle
 import android.util.Log
@@ -10,12 +10,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.conatctslist.R
-import com.example.conatctslist.data.local.ContactLocalDataSource
-import com.example.conatctslist.data.local.db.ContactsDatabase
-import com.example.conatctslist.data.repo.ContactRepository
+import com.example.contactslist.data.local.ContactLocalDataSource
+import com.example.contactslist.data.local.db.ContactsDatabase
+import com.example.contactslist.data.repo.ContactRepository
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.appcompat.widget.SearchView
+import com.example.conatctslist.R
 
 
 class ContactsListFragment : Fragment() {

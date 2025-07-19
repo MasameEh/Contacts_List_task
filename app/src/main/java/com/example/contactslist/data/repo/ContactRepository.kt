@@ -1,7 +1,7 @@
-package com.example.conatctslist.data.repo
+package com.example.contactslist.data.repo
 
-import com.example.conatctslist.data.local.IContactLocalDataSource
-import com.example.conatctslist.data.model.Contact
+import com.example.contactslist.data.local.IContactLocalDataSource
+import com.example.contactslist.data.model.Contact
 
 class ContactRepository(private val contactLocalDataSource: IContactLocalDataSource) : IContactRepository {
 

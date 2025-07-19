@@ -1,16 +1,14 @@
-package com.example.conatctslist.contacts_list
+package com.example.contactslist.contacts_list
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.conatctslist.R
-import com.example.conatctslist.data.model.Contact
+import com.example.contactslist.data.model.Contact
 
 class ContactsRecyclerViewAdapter (
     private val context: Context,

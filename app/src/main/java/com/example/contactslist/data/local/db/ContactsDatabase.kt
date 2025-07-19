@@ -1,10 +1,10 @@
-package com.example.conatctslist.data.local.db
+package com.example.contactslist.data.local.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.conatctslist.data.model.Contact
+import com.example.contactslist.data.model.Contact
 
 
 @Database(entities = [Contact::class], version = 1)

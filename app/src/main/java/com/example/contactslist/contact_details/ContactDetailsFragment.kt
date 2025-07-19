@@ -1,4 +1,4 @@
-package com.example.conatctslist.contact_details
+package com.example.contactslist.contact_details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

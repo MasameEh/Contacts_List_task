@@ -1,7 +1,6 @@
-package com.example.conatctslist.add_contact
+package com.example.contactslist.add_contact
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.conatctslist.R
-import com.example.conatctslist.data.local.ContactLocalDataSource
-import com.example.conatctslist.data.local.db.ContactsDatabase
-import com.example.conatctslist.data.model.Contact
-import com.example.conatctslist.data.repo.ContactRepository
+import com.example.contactslist.data.local.ContactLocalDataSource
+import com.example.contactslist.data.local.db.ContactsDatabase
+import com.example.contactslist.data.model.Contact
+import com.example.contactslist.data.repo.ContactRepository
 
 
 class AddContactFragment : Fragment() {

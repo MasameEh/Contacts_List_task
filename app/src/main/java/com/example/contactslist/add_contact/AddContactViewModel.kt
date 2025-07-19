@@ -1,13 +1,12 @@
-package com.example.conatctslist.add_contact
+package com.example.contactslist.add_contact
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.example.conatctslist.data.model.Contact
-import com.example.conatctslist.data.repo.IContactRepository
+import com.example.contactslist.data.model.Contact
+import com.example.contactslist.data.repo.IContactRepository
 import kotlinx.coroutines.launch
 
 class AddContactViewModel(private val repo: IContactRepository): ViewModel() {
