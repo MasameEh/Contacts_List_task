@@ -1,4 +1,7 @@
 package com.example.conatctslist.contact_details
 
-class ContactDetailsViewModel {
+import androidx.lifecycle.ViewModel
+import com.example.conatctslist.data.repo.IContactRepository
+
+class ContactDetailsViewModel (private val repo: IContactRepository): ViewModel(){
 }

@@ -27,10 +27,17 @@ class AddContactFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider.create(this,
-            AddContactViewModelFactory(ContactRepository(ContactLocalDataSource(
-                contactDao = ContactsDatabase.getInstance(requireContext()).getContactDao(
-                )))))[AddContactViewModel::class.java]
+        viewModel = ViewModelProvider.create(
+            this,
+            AddContactViewModelFactory(
+                ContactRepository(
+                    ContactLocalDataSource(
+                        contactDao = ContactsDatabase.getInstance(requireContext()).getContactDao(
+                        )
+                    )
+                )
+            )
+        )[AddContactViewModel::class.java]
     }
 
     override fun onCreateView(

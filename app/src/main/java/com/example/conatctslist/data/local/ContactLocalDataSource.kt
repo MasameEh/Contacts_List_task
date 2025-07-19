@@ -10,6 +10,7 @@ class ContactLocalDataSource(private val contactDao: ContactDao) : IContactLocal
 
     override fun getContacts(): LiveData<List<Contact>> {
         return contactDao.getAllContacts()
+
     }
 
     override suspend fun insertContact(contact: Contact): Long {

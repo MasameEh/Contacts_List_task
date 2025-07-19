@@ -18,7 +18,6 @@ class AddContactViewModel(private val repo: IContactRepository): ViewModel() {
      fun saveContact(contact: Contact) {
          viewModelScope.launch {
              _insertionResult.value = repo.insertContact(contact)
-             Log.i("TAG", "saveContact: saveContact ${_insertionResult.value}")
          }
 
      }
